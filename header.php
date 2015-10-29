@@ -9,6 +9,8 @@
 
   <?php // Load our CSS ?>
   <link rel="stylesheet" type="text/css" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
+  <link href='https://fonts.googleapis.com/css?family=Raleway:400,200,600,500|Open+Sans:400,300' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 
   <?php wp_head(); ?>
 </head>
@@ -17,17 +19,14 @@
 <body <?php body_class(); ?>>
 
 <header>
-  <div class="container">
-    <h1>
-      <a href="<?php echo home_url( '/' ); ?>" title="<?php bloginfo( 'name', 'display' ); ?>" rel="home">
-        <?php bloginfo( 'name' ); ?>
-      </a>
-    </h1>
-
+  <div class="headerContainer">
     <?php wp_nav_menu( array(
       'container' => false,
       'theme_locations' => 'primary'
     )); ?>
   </div> <!-- /.container -->
+  <div class="logo">
+    <img src="<?php echo bloginfo("template_url");?>/assets/RJAA.png" alt="">
+  </div>
 </header><!--/.header-->
 

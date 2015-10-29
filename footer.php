@@ -1,6 +1,11 @@
 <footer>
   <div class="container">
-    <p>&copy; HackerYou <?php echo date('Y'); ?></p>
+    <p class="social"> 
+    	<i class="fa fa-twitter"></i>
+    	<i class="fa fa-facebook"></i>
+    	<i class="fa fa-linkedin"></i>
+    	<i class="fa fa-google-plus"></i>
+    </p>
   </div>
 </footer>
 

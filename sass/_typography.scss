@@ -1,8 +1,8 @@
 a {
-	color: #BA209B;
+	color: #444;
 	text-decoration: none;
 	&:hover {
-		color: #D424B1;
+		color: #546A76;
 	}
 }
 
@@ -10,6 +10,18 @@ a {
 
 p {
 	line-height: 1.5;
+	font-family: 'Open Sans', sans-serif;
+}
+
+h1, h2, h3 {
+	font-family: 'Raleway', sans-serif;
+}
+
+//so homepage has no gap
+
+h2 {
+	margin-top: 0;
+	text-align: center;
 }
 
 /*blockquotes*/
@@ -94,4 +106,14 @@ img {
 	width: 100%;
 	float: left;
 	clear: both;
+}
+
+//footer
+
+.social {
+	text-align: center;
+	font-size: 1.5rem;
+	i {
+		margin-left: 20px;
+	}
 }

@@ -10,8 +10,10 @@
           <h1 class="entry-title"><?php the_title(); ?></h1>
 
           <div class="entry-meta">
-            <?php hackeryou_posted_on(); ?>
-          </div><!-- .entry-meta -->
+             <p> <?php echo get_avatar(get_the_author_meta("email"), "80" ); ?> Posted by 
+             <a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>"><?php the_author(); ?></a>
+             on  <?php the_time('D M j')?>  (<?php the_time('g:i A') ?>)</p>
+           </div> <!-- .entry-meta --> 
 
           <div class="entry-content">
             <?php the_content(); ?>
