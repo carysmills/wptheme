@@ -1,8 +1,19 @@
 <?php //index.php is the last resort template, if no other templates match ?>
-<?php get_header(); ?>
+
+ <?php get_header(); ?> 
+
+   <div class="blog" style="background-image:url('http:<?php the_field('blogHero'); ?>');">
+       <?php
+          if( is_home() && get_option('page_for_posts') ) {
+           $blog_page_id = get_option('page_for_posts');
+            echo '<h1>'.get_page($blog_page_id)->post_title.'</h1>';
+            }
+          ?>
+    </div>
 
 <div class="main">
   <div class="container">
+
 
   <div class="blogContent">
     <?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
@@ -41,7 +52,7 @@
 
   </div> <!-- /.content -->
 
-    <?php get_sidebar(); ?>
+    <?php get_sidebar(); ?> 
 
   </div> <!-- /.container -->
 </div> <!-- /.main -->

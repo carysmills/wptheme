@@ -2,7 +2,7 @@ a {
 	color: #444;
 	text-decoration: none;
 	&:hover {
-		color: #546A76;
+		color: #C2EABA;
 	}
 }
 
@@ -11,10 +11,16 @@ a {
 p {
 	line-height: 1.5;
 	font-family: 'Open Sans', sans-serif;
+	font-size: 20px;
 }
 
 h1, h2, h3 {
 	font-family: 'Raleway', sans-serif;
+}
+
+strong {
+	font-family: 'Raleway', sans-serif;
+	font-size: 25px;
 }
 
 //so homepage has no gap

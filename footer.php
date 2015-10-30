@@ -1,11 +1,36 @@
 <footer>
   <div class="container">
-    <p class="social"> 
-    	<i class="fa fa-twitter"></i>
-    	<i class="fa fa-facebook"></i>
-    	<i class="fa fa-linkedin"></i>
-    	<i class="fa fa-google-plus"></i>
-    </p>
+
+
+  <?php
+
+  $onePageQuery = new WP_Query(
+    array(
+      'posts_per_page' => -1,
+      'post_type' => 'social',
+      'order' => 'ASC'
+      )
+  ); ?>
+
+  <?php if ( $onePageQuery->have_posts() ) : ?>
+
+    <?php while ($onePageQuery->have_posts()) : $onePageQuery->the_post(); ?>
+
+    <div class="social">
+
+    <?php if( get_field('socialmedia') ): ?>
+        <?php the_field('socialmedia'); ?>
+    <?php endif; ?>  
+
+    </div>
+
+    <?php endwhile; ?>
+
+    <?php wp_reset_postdata(); ?>
+
+  <?php else:  ?>
+  <?php endif; ?>
+
   </div>
 </footer>
 

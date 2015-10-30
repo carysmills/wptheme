@@ -4,7 +4,6 @@
   <div class="container">
     <div class="content">
       <?php // Start the loop ?>
-      <?php the_content(); ?>
       <?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
 
 	<?php if ( has_post_thumbnail() ): {
@@ -12,14 +11,13 @@
 	 		$the_title = get_the_title();
 	 		$the_content = get_the_content();
 
+
+	 				//the header hero image and text to be set by user in WP
 	                 echo '<div class="backgroundImage" style="background-image:url('.$feat_image_url.');">
 
-	                 	<div class="buffer">
-
+	                 	<div class="buffer wrapper">
 		                 	<h2 class="topH2">'.$the_title.'</h2>
 		                 	<p class="topP">'.$the_content.'</p>
-		                 	<button class="volunteer">Get invovled</button>
-
 	                 	</div>
 
 	                 </div>';
@@ -36,7 +34,9 @@
 <div class="main">
     <div class="main-container">
 		<section class="secondBlock block">
-			<?php the_field('abouthome'); ?>
+			<div class="wrapper">
+				<?php the_field('abouthome'); ?>
+			</div>
 		</section>
 	</div>
 </div>
@@ -44,17 +44,19 @@
 <div class="main">
     <div class="main-containerTwo">
 		<section class="thirdBlock block">
-			<?php the_field('aboutevents'); ?>
+			<div class="wrapper">
+				<?php the_field('aboutevents'); ?>
+			</div>
 		</section>
 	</div>
 </div>
 
 <div class="main">
-    <div class="main-containerThree">
-		<section class="fourthBlock block">
-			<?php the_field('donate'); ?>
-		</section>
+	<div class="donate" style="background-image:url('http:<?php the_field('donatebackground'); ?>');">
+	<div class="bufferTwo wrapper">
+		<?php the_field('donate'); ?>
 	</div>
+</div>
 </div>
 
 

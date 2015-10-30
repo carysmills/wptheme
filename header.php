@@ -25,8 +25,37 @@
       'theme_locations' => 'primary'
     )); ?>
   </div> <!-- /.container -->
+
+<?php
+
+$onePageQuery = new WP_Query(
+  array(
+    'posts_per_page' => -1,
+    'post_type' => 'logo',
+    'order' => 'ASC'
+    )
+); ?>
+
+<?php if ( $onePageQuery->have_posts() ) : ?>
+
+  <?php while ($onePageQuery->have_posts()) : $onePageQuery->the_post(); ?>
+
   <div class="logo">
-    <img src="<?php echo bloginfo("template_url");?>/assets/RJAA.png" alt="">
+
+  <?php if( get_field('logo') ): ?>
+    <img src="<?php the_field('logo'); ?>" />
+  <?php endif; ?>  
+
   </div>
+
+  <?php endwhile; ?>
+
+  <?php wp_reset_postdata(); ?>
+
+<?php else:  ?>
+<?php endif; ?>
+
+
+
 </header><!--/.header-->
 

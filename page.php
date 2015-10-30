@@ -1,19 +1,40 @@
 <?php get_header();  ?>
 
-<div class="main">
-  <div class="container">
-
-    <div class="content">
       <?php // Start the loop ?>
       <?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
 
-        <h2><?php the_title(); ?></h2>
-        <?php the_content(); ?>
+      
+      		<?php if ( has_post_thumbnail() ): {
+      		 		$feat_image_url = wp_get_attachment_url( get_post_thumbnail_id() );
+      		 		$the_title = get_the_title();
+      		 		$the_content = get_the_content();
 
-      <?php endwhile; // end the loop?>
-    </div> <!-- /,content -->
 
-  </div> <!-- /.container -->
-</div> <!-- /.main -->
+      		 				//the header hero image and text to be set by user in WP
+      		                 echo '<div class="backgroundImageTwo" style="background-image:url('.$feat_image_url.');">
+
+      		                 	<div class="contactBuffer wrapper">
+      			                 	<h2 class="topH2">'.$the_title.'</h2>
+      			                 	<p class="topP">'.$the_content.'</p>
+      		                 	</div>
+
+      		                 </div>';
+      		            }
+      		          endif; 
+      		 ?>
+      	      <?php endwhile; // end the loop?>
+
+
+			<section class="socialWrapper">
+	        	<div class="wrapper contactWrapper">
+	        		<div class="socialTop">
+						<?php the_field('contactsocial'); ?>
+					</div>
+	        		<div>
+	        			<?php the_field('contactform'); ?>
+	        		</div>
+	        	</div>
+        	</section>
+
 
 <?php get_footer(); ?>
