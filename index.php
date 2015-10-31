@@ -2,14 +2,17 @@
 
  <?php get_header(); ?> 
 
-   <div class="blog" style="background-image:url('http:<?php the_field('blogHero'); ?>');">
-       <?php
-          if( is_home() && get_option('page_for_posts') ) {
-           $blog_page_id = get_option('page_for_posts');
-            echo '<h1>'.get_page($blog_page_id)->post_title.'</h1>';
-            }
-          ?>
-    </div>
+    <?php if ( has_post_thumbnail() ): {
+              $feat_image_url = wp_get_attachment_url( get_post_thumbnail_id() );
+
+                  //the header hero image most recent from blog
+                           echo '<div class="backgroundImageTwo" style="background-image:url('.$feat_image_url.');">
+                           <p>News</p>
+                           </div>';
+                      }
+                    endif; 
+           ?>
+
 
 <div class="main">
   <div class="container">

@@ -87,9 +87,9 @@ header {
 	margin: 0 auto;
 	position: absolute;
 	border-radius: 5px;
-	width: 33%;
+	width: 50%;
 	top:25%;
-	left: 33%;
+	left: 25%;
 	border: 5px solid white;
 	transform: skew(-5deg) rotate(0deg);
 
@@ -245,6 +245,12 @@ section {
 	}
 }
 
+button, input {
+    line-height: normal;
+    width: 20%;
+    padding-bottom: 5px;
+ }   
+
 //contact page
 
 .backgroundImageTwo {
@@ -257,12 +263,24 @@ section {
 	background: none;
 	h2 {
 		color: black;
-		padding: 4%;
+		padding-top: 7%;
+		font-size: 30px; 
 	}
 }
 
 .contactWrapper {
-	text-align: center;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+
+.contactForm input {
+	width: 90%;
+}
+
+textarea {
+	width: 90%;
 }
 
 .wpcf7-submit {
@@ -276,6 +294,7 @@ section {
 
 .socialTop {
 	padding-bottom: 30px;
+	width: 35%;
 }
 
 .socialWrapper {
@@ -296,7 +315,49 @@ section {
   -webkit-backface-visibility: hidden;
 }
 
+.contactForm {
+	width: 60%;
+}
+
 .blog {
 	height: 60vh;
 	background-size: cover;
+}
+
+// .floatContent {
+// 	float: left;
+// 	width: 65%;
+// 	margin-right: 5%;
+// }
+
+//about page
+
+.team {
+	text-align: left;
+	img {
+		border-radius: 50%;
+		margin: 2%;
+	}
+}
+
+.member {
+	margin-bottom: 4%;
+	padding: 2%;
+	background: rgba(255,255,255,0.3);
+	border-radius: 10px;
+}
+
+.contact .topH2 {
+		padding-top: 2%;
+	}
+
+.member:nth-child(even) {
+	background: rgba(0,0,0,0.3);
+}
+
+.contact {
+	background: rgba(0,0,0,0.5);
+	width: 70%;
+	left: 15%;
+	margin-top: 5%;
 }

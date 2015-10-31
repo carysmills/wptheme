@@ -282,4 +282,4 @@ function acf_set_featured_image( $value, $post_id, $field  ){
 // acf/update_value/name={$field_name} - filter for a specific field based on it's name
 add_filter('acf/update_value/name=cursusfoto', 'acf_set_featured_image', 10, 3);
 
-show_admin_bar( false );
+show_admin_bar( true );
