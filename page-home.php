@@ -1,6 +1,6 @@
 <?php get_header();  ?>
 
-<div class="main">
+<div class="mainHome">
   <div class="container">
     <div class="content">
       <?php // Start the loop ?>

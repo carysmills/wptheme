@@ -32,6 +32,9 @@
 					</div>
 	     
                         <div class="team">
+                        <div class="meet">
+                              <?php the_field('meet'); ?>
+                        </div>
 
                         <?php while( has_sub_field('team') ): ?>
                               <div class="member">

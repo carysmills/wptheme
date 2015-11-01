@@ -42,16 +42,15 @@ body {
 	height: 100vh;
 }
 
-.blogContent {
-	background: #C2EABA;
-}
-
 header {
 	display: flex;
 	flex-direction: row; 
 	justify-content: space-between; 
-	background: rgba(255,255,255,0.5);
-	background: none;
+	background: rgba(255,255,255,0.2);
+	position: fixed;
+	z-index: 999;
+	width: 100%;
+	top: 0;
 }
 
 .headerContainer {
@@ -145,7 +144,7 @@ header {
   background: white;
   transform: skewY(2deg);
   -webkit-backface-visibility: hidden;
-  z-index: 999;
+  z-index: 998;
 }
 
 
@@ -254,7 +253,7 @@ button, input {
 //contact page
 
 .backgroundImageTwo {
-	height: 80vh;
+	height: 90vh;
 	background-size: cover;
 	background-position: center;
 }
@@ -359,5 +358,72 @@ textarea {
 	background: rgba(0,0,0,0.5);
 	width: 70%;
 	left: 15%;
-	margin-top: 5%;
 }
+
+.meet {
+	text-align: center;
+	margin-bottom: 5%;
+}
+
+//blog page
+
+.blogArticle {
+	background: rgba(197,244,224,0.6);
+	margin-top: 20px;
+	padding: 2%;
+	border-radius: 10px;
+}
+
+.type-post strong {
+	font-size: 20px;
+}
+
+.blogArticle:nth-child(even) {
+	background: rgba(194,234,186,0.6)
+}
+
+.blogContent {
+	width: 70%;
+}
+
+.blogContainer {
+	padding-top: 70px;
+	position: relative;
+}
+
+.realContainer {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between; 
+}
+
+.blogContainer:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: -36px;
+  width: 100%;
+  height: 90px;
+  background: white;
+  transform: skewY(2.5deg);
+  -webkit-backface-visibility: hidden;
+}
+
+.blogBuffer {
+	background: rgba(0,0,0,0.8);
+	margin: 0 auto;
+	position: absolute;
+	border-radius: 5px;
+	width: 50%;
+	top:35%;
+	left: 25%;
+	padding: 2%;
+	border: 5px solid white;
+	transform: skew(-5deg) rotate(0deg);
+}
+
+.blogType {
+	color: white;
+	font-size: 30px;
+}
+
